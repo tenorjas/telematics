@@ -23,7 +23,13 @@ namespace telematics
             }
 
             // variable for reading from a file
-            
+            var vehiclesFromFiles = new List<VehicleInfo>();
+
+            // open all json files for reading
+            using (var reader = new StreamReader(File.Open("*.json",FileMode.OpenOrCreate)))
+            {
+                
+            }
         }
     }
 }

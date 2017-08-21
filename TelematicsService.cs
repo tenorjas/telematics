@@ -21,15 +21,13 @@ namespace telematics
                 // write one vehicle's telematics data to a file
                 writer.WriteLine($"{odo},{consumption},{lastOilChange},{liters}");
             }
+        }
 
-            // variable for reading from a file
-            var vehiclesFromFiles = new List<VehicleInfo>();
-
-            // open all json files for reading
-            using (var reader = new StreamReader(File.Open("*.json",FileMode.OpenOrCreate)))
-            {
-                
-            }
+        public void deJson(VehicleInfo vehicleInfo)
+        {
+            string[] files = System.IO.Directory.GetFiles("/Users/tenorjas/projects/tiy/week_8/telematics","*.json");
+            // LIST CREATION GOES HERE
+            
         }
     }
 }

@@ -7,7 +7,7 @@ namespace telematics
 {
     public class TelematicsService
     {
-        void Report(VehicleInfo vehicleInfo)
+        public void Report(VehicleInfo vehicleInfo)
         {
             // declare variable for readability
             int VIN = vehicleInfo.VIN;

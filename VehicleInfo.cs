@@ -5,14 +5,14 @@ namespace telematics
     public class VehicleInfo
     {
         public int VIN {get; set;}
-        public double odometer {get; set;}
-        public double consumption {get; set;}
-        public double odoLastOilChange {get; set;}
-        public double engineLiters {get; set;}
+        public double Odometer {get; set;}
+        public double Consumption {get; set;}
+        public double OdoLastOilChange {get; set;}
+        public double EngineLiters {get; set;}
 
         public override string ToString()
         {
-            return $"{VIN},{odometer},{consumption},{odoLastOilChange},{engineLiters}";
+            return $"VIN:{VIN}, Odometer: {Odometer}, Consumption: {Consumption},Last Oil Change Odometer Reading:{OdoLastOilChange}, Engine Size:{EngineLiters}";
         }
 
         public VehicleInfo()
@@ -20,13 +20,13 @@ namespace telematics
 
         }
 
-        public VehicleInfo(string[] data)
+        public VehicleInfo(int vin, double odometer, double consumption, double odometerLastOilChange, double engineSize)
         {
-            VIN = int.Parse(data[0]);
-            odometer = double.Parse(data[1]);
-            consumption = double.Parse(data[2]);
-            odoLastOilChange = double.Parse(data[3]);
-            engineLiters = double.Parse(data[4]);
+            VIN = vin;
+            Odometer = odometer;
+            Consumption = consumption;
+            OdoLastOilChange = odometerLastOilChange;
+            EngineLiters = engineSize;
         }
     }
 }

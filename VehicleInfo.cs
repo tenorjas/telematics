@@ -7,8 +7,8 @@ namespace telematics
         public int VIN {get; set;}
         public double Odometer {get; set;}
         public double Consumption {get; set;}
-        public double OdoLastOilChange {get; set;}
-        public double EngineLiters {get; set;}
+        public double OdometerLastOilChange {get; set;}
+        public double EngineSize {get; set;}
 
         public override string ToString()
         {
@@ -25,8 +25,8 @@ namespace telematics
             VIN = vin;
             Odometer = odometer;
             Consumption = consumption;
-            OdoLastOilChange = odometerLastOilChange;
-            EngineLiters = engineSize;
+            OdometerLastOilChange = odometerLastOilChange;
+            EngineSize = engineSize;
         }
     }
 }

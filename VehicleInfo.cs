@@ -12,7 +12,7 @@ namespace telematics
 
         public override string ToString()
         {
-            return $"VIN:{VIN}, Odometer: {Odometer}, Consumption: {Consumption},Last Oil Change Odometer Reading:{OdoLastOilChange}, Engine Size:{EngineLiters}";
+            return $"VIN:{VIN}, Odometer: {Odometer}, Consumption: {Consumption},Last Oil Change Odometer Reading:{OdometerLastOilChange}, Engine Size:{EngineSize}";
         }
 
         public VehicleInfo()

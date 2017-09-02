@@ -20,11 +20,25 @@ namespace telematics
             }
         }
 
-        public void GenerateHTMLReport(VehicleInfo vehicleInfo)
+        public void ReadFiles(VehicleInfo vehicleInfo)
         {
-            string[] files = System.IO.Directory.GetFiles("/Users/tenorjas/projects/tiy/week_8/telematics","*.json");
+            string[] files = System.IO.Directory.GetFiles("/Users/theironyard/tenorjas/telematics/telematics","*.json");
             // LIST CREATION GOES HERE
-            
+            List<object> vehicleList = new List<object>();
+            foreach (var item in files)
+            {
+                using (StreamReader file = File.OpenText(item))
+                {
+                    var vehicleInfo2 = JsonConvert.DeserializeObject<VehicleInfo>(file.ReadToEnd());
+                    vehicleList.Add(vehicleInfo2);
+                    Console.WriteLine($"VIN: {vehicleInfo2.VIN}");
+                    Console.WriteLine($" Current odometer reading: {vehicleInfo2.Odometer} miles");
+                    Console.WriteLine($"Consumption rate: {vehicleInfo2.Consumption} mpg");
+                    Console.WriteLine($"Odometer reading at last oil change: {vehicleInfo2.OdometerLastOilChange} miles");
+                    Console.WriteLine($"Engine size: {vehicleInfo2.EngineSize} liters");
+                    Console.WriteLine("\n");
+                }
+            }
         }
     }
 }
